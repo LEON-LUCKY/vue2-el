@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <MySelect @visible-change="handlerVisibleChange(arguments, '#')" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MySelect from "./components/MySelect.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    MySelect,
+  },
+  methods: {
+    handlerVisibleChange(params, flag) {
+      console.log(Array.from(params), flag);
+    },
+  },
+};
 </script>
 
 <style>
